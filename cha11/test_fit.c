@@ -7,7 +7,7 @@ int main(void)
     char * str = "hello world!";
     //printf("%s\n", str);
     puts(str);
-    fit(str, 80);
+    fit(str, 3);
     //printf("%s\n", str);
     puts(str);
     return 0;
