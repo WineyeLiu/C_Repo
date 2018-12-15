@@ -1,13 +1,14 @@
 /* test_fit.c 2018-12-14 23:18:12*/
 #include <stdio.h>
 #include <string.h>
-void fit(char * string, int size);
+void fit(char *, int);
 int main(void)
 {
-    char * str = "hello world!";
+    // char * str = "hello world!"; //此处不能以指针形式，会报Segment Fault
+    char str[] = "hello world!";
     //printf("%s\n", str);
     puts(str);
-    fit(str, 80);
+    fit(str, 3);
     //printf("%s\n", str);
     puts(str);
     return 0;
