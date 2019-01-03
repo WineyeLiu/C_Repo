@@ -14,7 +14,7 @@ struct book {
 int main(void)
 {
     struct book library[MAX_BKS];
-    int count;
+    int count = 0;
     int index,filecount;
     FILE * filep;
     int size = sizeof(struct book);
@@ -48,9 +48,36 @@ int main(void)
 
     while (count < MAX_BKS && gets(library[count].title) != NULL &&
         library[count].title[0] != '\0')
+    {
+        puts("Now enter the author.");
+        gets(library[count].author);
+        puts("Now enter the value");
+        scanf("%f", &library[count].value);
+        while(getchar() != '\n') 
         {
-            puts("Now enter the author.");
-            get(library[count].author);
+            continue;
         }
+        if(count < MAX_BKS)
+        {
+            puts("Enter next title");
+        }
+    }
 
+    if (count >  0)
+    {
+        puts("Here is the list of your books:");
+        for (index = 0; index < count; index ++)
+        {
+            printf("%s by %s : $%.2f.\n", library[index].title,
+                library[index].author, library[index].value);
+        }
+        fwrite(&library[filecount], size, count - filecount, filep);
+    } else 
+    {
+        puts("no books!");
+    }
+    puts("Bye!");
+    fclose(filep);
+
+    return 0;
 }
