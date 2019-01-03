@@ -7,7 +7,7 @@
 struct node {
     char name[64];
     struct node * next;
-};
+}; // 链表结点结构
 
 struct node * kick_out_one(struct node *, int);
 struct node * init_nodes(int);
