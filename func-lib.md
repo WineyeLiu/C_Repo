@@ -1,4 +1,4 @@
-# 创建和使用函数库
+1# 创建和使用函数库
 
 函数库可以分为两种：
 
@@ -49,5 +49,8 @@ gcc -shared a.o b.o -o libxxx.so
 
 * -fPIC 创建地址独立的目标文件
 * -shared 创建一个共享库
+
+### 2.使用共享库
+gcc use-static-lib.c -o use-shared-lib ./libdemo.so
 
 
